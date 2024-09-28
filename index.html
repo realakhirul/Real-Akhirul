@@ -1,24 +1,42 @@
-<form id="registrationForm">
-    <label for="name">Name:</label>
-    <input type="text" id="name" required><br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Akhirul</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="auth">
+        <h1>Welcome to Real Akhirul</h1>
+        <button id="login-btn">Login</button>
+        <button id="register-btn">Register</button>
+        
+        <div id="login-form" class="hidden">
+            <h2>Login</h2>
+            <input type="email" id="login-email" placeholder="Email">
+            <input type="password" id="login-password" placeholder="Password">
+            <button id="submit-login">Login</button>
+        </div>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" required><br>
-
-    <label for="password">Password:</label>
-    <input type="password" id="password" required><br>
-
-    <label for="confirmPassword">Confirm Password:</label>
-    <input type="password" id="confirmPassword" required><br>
-
-    <label for="dob">Date of Birth:</label>
-    <input type="date" id="dob" required><br>
-
-    <label for="profile">Profile Picture:</label>
-    <input type="file" id="profile" accept="image/*"><br>
-
-    <label for="description">Description:</label>
-    <textarea id="description" rows="4"></textarea><br>
-
-    <button type="submit">Register</button>
-</form>
+        <div id="register-form" class="hidden">
+            <h2>Register</h2>
+            <input type="text" id="reg-name" placeholder="Name">
+            <input type="email" id="reg-email" placeholder="Email">
+            <input type="password" id="reg-password" placeholder="Password">
+            <input type="date" id="reg-dob" placeholder="Date of Birth">
+            <button id="submit-register">Register</button>
+        </div>
+    </div>
+    
+    <div id="feed" class="hidden">
+        <h2>User Feed</h2>
+        <input type="file" id="upload-photo" accept="image/*">
+        <input type="file" id="upload-video" accept="video/*">
+        <button id="upload-btn">Upload</button>
+        <div id="posts"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

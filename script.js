@@ -1,44 +1,64 @@
-document.getElementById('login-btn').addEventListener('click', function() {
-    document.getElementById('login-form').classList.toggle('hidden');
-    document.getElementById('register-form').classList.add('hidden');
-});
+// Show Login or Registration Form
+function showLogin() {
+    document.getElementById('loginForm').style.display = 'block';
+}
 
-document.getElementById('register-btn').addEventListener('click', function() {
-    document.getElementById('register-form').classList.toggle('hidden');
-    document.getElementById('login-form').classList.add('hidden');
-});
+function showRegister() {
+    document.getElementById('registerForm').style.display = 'block';
+}
 
-document.getElementById('submit-login').addEventListener('click', function() {
-    // Simulate login logic (you can implement real logic later)
-    alert('Logged in!');
-    document.getElementById('auth').classList.add('hidden');
-    document.getElementById('feed').classList.remove('hidden');
-});
+// Close Form
+function closeForm(formId) {
+    document.getElementById(formId).style.display = 'none';
+}
 
-document.getElementById('submit-register').addEventListener('click', function() {
-    // Simulate registration logic (you can implement real logic later)
-    alert('Registered!');
-    document.getElementById('auth').classList.add('hidden');
-    document.getElementById('feed').classList.remove('hidden');
-});
+// Register Function (Note: For front-end only, you will need a backend to save data)
+function register() {
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const username = document.getElementById('username').value;
+    const contactInfo = document.getElementById('contactInfo').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
 
-document.getElementById('upload-btn').addEventListener('click', function() {
-    const photoInput = document.getElementById('upload-photo');
-    const videoInput = document.getElementById('upload-video');
-    const postsDiv = document.getElementById('posts');
-    
-    if (photoInput.files.length > 0) {
-        const photoURL = URL.createObjectURL(photoInput.files[0]);
-        postsDiv.innerHTML += `<img src="${photoURL}" style="width:100px;height:auto;margin:10px;">`;
-        photoInput.value = ''; // Clear input
+    if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return;
     }
 
-    if (videoInput.files.length > 0) {
-        const videoURL = URL.createObjectURL(videoInput.files[0]);
-        postsDiv.innerHTML += `<video width="100" controls>
-                                <source src="${videoURL}" type="video/mp4">
-                                Your browser does not support the video tag.
-                                </video>`;
-        videoInput.value = ''; // Clear input
+    // Store user info (localStorage for demo purposes)
+    localStorage.setItem('user', JSON.stringify({ firstName, lastName, username, contactInfo, password }));
+
+    alert("Registration Successful!");
+    closeForm('registerForm');
+    document.getElementById('uploadForm').style.display = 'block';
+}
+
+// Login Function
+function login() {
+    const loginUser = document.getElementById('loginUser').value;
+    const loginPassword = document.getElementById('loginPassword').value;
+
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    if (user && (user.username === loginUser || user.contactInfo === loginUser) && user.password === loginPassword) {
+        alert("Login Successful!");
+        closeForm('loginForm');
+        document.getElementById('uploadForm').style.display = 'block';
+    } else {
+        alert("Login Failed! Incorrect Username or Password.");
     }
-});
+}
+
+// Upload Post Function
+function uploadPost() {
+    const file = document.getElementById('fileUpload').files[0];
+    const caption = document.getElementById('caption').value;
+
+    if (file) {
+        alert("File uploaded successfully!");
+        // For real use-case, you'd need a backend to save and handle files.
+    } else {
+        alert("Please select a file.");
+    }
+}

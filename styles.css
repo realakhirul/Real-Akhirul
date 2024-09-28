@@ -2,23 +2,36 @@ body {
     font-family: Arial, sans-serif;
 }
 
-#top-nav {
+form {
     display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background: #f8f8f8;
+    flex-direction: column;
+    max-width: 300px;
+    margin: auto;
 }
 
-footer {
-    display: flex;
-    justify-content: space-around;
-    background: #f8f8f8;
-    padding: 10px 0;
+input {
+    margin: 5px 0;
+    padding: 10px;
 }
 
 button {
-    background: none;
+    padding: 10px;
+    background-color: #0095f6;
+    color: white;
     border: none;
     cursor: pointer;
-    font-size: 16px;
+}
+
+button:hover {
+    background-color: #007bbf;
+}
+
+img {
+    max-width: 100%;
+}
+
+.post {
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    padding: 10px;
 }

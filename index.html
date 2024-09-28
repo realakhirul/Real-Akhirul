@@ -3,40 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Akhirul</title>
+    <title>Real Akhirul - Instagram Clone</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="auth">
-        <h1>Welcome to Real Akhirul</h1>
-        <button id="login-btn">Login</button>
-        <button id="register-btn">Register</button>
-        
-        <div id="login-form" class="hidden">
-            <h2>Login</h2>
-            <input type="email" id="login-email" placeholder="Email">
-            <input type="password" id="login-password" placeholder="Password">
-            <button id="submit-login">Login</button>
-        </div>
+    <div class="header">
+        <h1>Real Akhirul</h1>
+        <button id="loginBtn">Login</button>
+        <button id="registerBtn">Register</button>
+    </div>
 
-        <div id="register-form" class="hidden">
-            <h2>Register</h2>
-            <input type="text" id="reg-name" placeholder="Name">
-            <input type="email" id="reg-email" placeholder="Email">
-            <input type="password" id="reg-password" placeholder="Password">
-            <input type="date" id="reg-dob" placeholder="Date of Birth">
-            <button id="submit-register">Register</button>
-        </div>
+    <div class="container">
+        <!-- User's feed, photos, videos will be here -->
     </div>
-    
-    <div id="feed" class="hidden">
-        <h2>User Feed</h2>
-        <input type="file" id="upload-photo" accept="image/*">
-        <input type="file" id="upload-video" accept="video/*">
-        <button id="upload-btn">Upload</button>
-        <div id="posts"></div>
-    </div>
-    
-    <script src="script.js"></script>
+
+    <!-- JavaScript -->
+    <script src="scripts.js"></script>
 </body>
 </html>

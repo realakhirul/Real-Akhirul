@@ -1,0 +1,8 @@
+.upload-container {
+    margin: 20px 0;
+}
+
+.upload-container form {
+    display: flex;
+    flex-direction: column;
+}

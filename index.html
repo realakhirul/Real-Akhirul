@@ -3,55 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Akhirul - Social App</title>
+    <title>Real Akhirul</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <h1>Real Akhirul</h1>
-        <button onclick="showLogin()">Login</button>
-        <button onclick="showRegister()">Register</button>
-    </nav>
-
-    <!-- Registration Form -->
-    <div id="registerForm" class="form-popup" style="display: none;">
-        <form>
-            <h2>Register</h2>
-            <input type="text" placeholder="First Name" id="firstName" required>
-            <input type="text" placeholder="Last Name" id="lastName" required>
-            <input type="text" placeholder="Username" id="username" required>
-            <input type="text" placeholder="Email or Phone Number" id="contactInfo" required>
-            <input type="password" placeholder="Password" id="password" required>
-            <input type="password" placeholder="Confirm Password" id="confirmPassword" required>
-            <button type="button" onclick="register()">Submit</button>
-            <button type="button" onclick="closeForm('registerForm')">Cancel</button>
-        </form>
-    </div>
-
-    <!-- Login Form -->
-    <div id="loginForm" class="form-popup" style="display: none;">
-        <form>
-            <h2>Login</h2>
-            <input type="text" placeholder="Email/Username/Phone Number" id="loginUser" required>
-            <input type="password" placeholder="Password" id="loginPassword" required>
-            <button type="button" onclick="login()">Login</button>
-            <button type="button" onclick="closeForm('loginForm')">Cancel</button>
-        </form>
-    </div>
-
-    <!-- Main Content Section -->
-    <div class="main-content">
-        <h2>Upload Photo, Video, or Story</h2>
-        <form id="uploadForm" style="display:none;">
-            <input type="file" id="fileUpload">
-            <textarea placeholder="Write a caption..." id="caption"></textarea>
-            <button type="button" onclick="uploadPost()">Upload</button>
-        </form>
-        <div class="feed">
-            <!-- Here goes the feed and uploaded content -->
+    <header>
+        <div id="top-nav">
+            <button id="message-btn">Messages</button>
+            <button id="notifications-btn">Notifications</button>
         </div>
-    </div>
+    </header>
+    <main>
+        <div id="feed">
+            <!-- User posts will be dynamically inserted here -->
+        </div>
+    </main>
+    <footer>
+        <button id="home-btn">Home</button>
+        <button id="search-btn">Search</button>
+        <button id="upload-btn">Upload</button>
+        <button id="shorts-btn">Shorts</button>
+        <button id="profile-btn">Profile</button>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>

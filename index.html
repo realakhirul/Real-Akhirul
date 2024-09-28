@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Akhirul</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Real Akhirul</h1>
-        <div id="auth-section">
-            <input type="text" id="username" placeholder="Username">
-            <input type="password" id="password" placeholder="Password">
-            <button onclick="login()">Login</button>
-            <button onclick="register()">Register</button>
-        </div>
-    </header>
-    <main id="video-feed">
-        <!-- Video Posts will be dynamically inserted here -->
-    </main>
-    <script src="script.js"></script>
-</body>
-</html>
+<form id="registrationForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" required><br>
+
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" id="confirmPassword" required><br>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" required><br>
+
+    <label for="profile">Profile Picture:</label>
+    <input type="file" id="profile" accept="image/*"><br>
+
+    <label for="description">Description:</label>
+    <textarea id="description" rows="4"></textarea><br>
+
+    <button type="submit">Register</button>
+</form>

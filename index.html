@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Short Video App</title>
+</head>
+<body>
+    <header>
+        <h1>Short Video App</h1>
+        <nav>
+            <a href="#upload">Upload Video</a>
+            <a href="#profile">Profile</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Video Upload Section -->
+        <section id="upload">
+            <h2>Upload a Video</h2>
+            <form id="uploadForm">
+                <input type="file" id="videoInput" accept="video/*">
+                <button type="submit">Upload</button>
+            </form>
+        </section>
+
+        <!-- Video Feed Section -->
+        <section id="feed">
+            <h2>Video Feed</h2>
+            <div id="videoFeed">
+                <!-- Uploaded videos will be shown here -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

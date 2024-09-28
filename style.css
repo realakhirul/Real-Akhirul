@@ -1,0 +1,53 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Header styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #ff5722;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* Main content */
+main {
+    padding: 20px;
+}
+
+#upload {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+}
+
+#videoFeed {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+}

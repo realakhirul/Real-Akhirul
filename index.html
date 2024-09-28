@@ -3,37 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Short Video App</title>
+    <title>Real Akhirul</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Short Video App</h1>
-        <nav>
-            <a href="#upload">Upload Video</a>
-            <a href="#profile">Profile</a>
-        </nav>
+        <h1>Real Akhirul</h1>
+        <div id="auth-section">
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <button onclick="register()">Register</button>
+        </div>
     </header>
-
-    <main>
-        <!-- Video Upload Section -->
-        <section id="upload">
-            <h2>Upload a Video</h2>
-            <form id="uploadForm">
-                <input type="file" id="videoInput" accept="video/*">
-                <button type="submit">Upload</button>
-            </form>
-        </section>
-
-        <!-- Video Feed Section -->
-        <section id="feed">
-            <h2>Video Feed</h2>
-            <div id="videoFeed">
-                <!-- Uploaded videos will be shown here -->
-            </div>
-        </section>
+    <main id="video-feed">
+        <!-- Video Posts will be dynamically inserted here -->
     </main>
-
     <script src="script.js"></script>
 </body>
 </html>

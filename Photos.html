@@ -3,8 +3,9 @@ document.getElementById("uploadButton").addEventListener("click", function() {
     const file = fileInput.files[0];
 
     if (file) {
+        // Here, you would typically upload the file to a server or cloud storage
         alert("File uploaded: " + file.name);
-        // Add logic to display the uploaded content on the page if needed
+        // Add logic to display the uploaded content on the page
     } else {
         alert("Please select a file to upload.");
     }

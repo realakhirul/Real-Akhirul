@@ -3,32 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Real Akhirul</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Your CSS file if you have one -->
 </head>
 <body>
-    <header>
-        <h1>Welcome to Real Akhirul</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Search</a></li>
-                <li><a href="#">Upload</a></li>
-                <li><a href="#">Shorts</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Messages</a></li>
-                <li><a href="#">Notifications</a></li>
-                <!-- Add Register and Login buttons -->
-                <li><a href="register.html" class="button">Register</a></li>
-                <li><a href="login.html" class="button">Login</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <p>This is a simple website hosted on GitHub Pages!</p>
-    </main>
+    <!-- Other content of your website -->
 
-    <script src="script.js"></script>
+    <!-- Registration Button -->
+    <button id="registerButton">Register</button>
+
+    <!-- Registration Form (Initially Hidden) -->
+    <div id="registrationForm" style="display:none;">
+        <h2>Register</h2>
+        <form id="form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required><br><br>
+
+            <label for="emailOrPhone">Email or Phone Number:</label>
+            <input type="text" id="emailOrPhone" required><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required><br><br>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" required><br><br>
+
+            <button type="submit">Submit</button>
+            <button type="button" id="closeButton">Close</button>
+        </form>
+    </div>
+
+    <script>
+        // Show registration form when button is clicked
+        document.getElementById('registerButton').onclick = function() {
+            document.getElementById('registrationForm').style.display = 'block';
+        };
+
+        // Hide registration form when close button is clicked
+        document.getElementById('closeButton').onclick = function() {
+            document.getElementById('registrationForm').style.display = 'none';
+        };
+
+        // Handle form submission
+        document.getElementById('form').onsubmit = function(event) {
+            event.preventDefault(); // Prevent page refresh
+
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+            } else {
+                alert("Registration successful!");
+                // Here you can add further logic to handle registration (e.g., send data to the server)
+                // After successful registration, you might want to hide the form
+                document.getElementById('registrationForm').style.display = 'none';
+            }
+        };
+    </script>
 </body>
 </html>
+
